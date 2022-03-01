@@ -1,0 +1,24 @@
+while (Serial.available())
+{
+switch (Serial.read()) {
+case 'l':
+    Serial.println("Left click");
+    bleMouse.click(MOUSE_LEFT);
+    break;
+case 'r':
+    Serial.println("Right click");
+    bleMouse.click(MOUSE_RIGHT);      
+    break;
+case 'c':
+    Serial.println("move a rectangle");
+    bleMouse.move(127,0,0,0);   
+    delay(200);
+    bleMouse.move(0,127,0,0);   
+    delay(200);
+    bleMouse.move(-127,0,0,0);   
+    delay(200);
+    bleMouse.move(0,-127,0,0);   
+    delay(200);
+    break;  
+}
+}
